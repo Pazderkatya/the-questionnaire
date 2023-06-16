@@ -11,7 +11,7 @@ form.addEventListener("submit", (event) => {
         document.querySelector('#secondName').value = "";
         document.querySelector('#email').value = "";
         document.querySelector('#phone').value = "";
-        document.querySelector('#agree').checked = false;
+        document.querySelector('#agree').value = false;
 
     }
     const sendButton = document.querySelector('#button');
@@ -28,10 +28,10 @@ form.addEventListener("submit", (event) => {
                 },
                 body: JSON.stringify({
                     "name": document.querySelector('#name').value,
-                    "secondName": document.querySelector('#secondName').value,
-                    "email": document.querySelector('#email').value,
-                    "phone": document.querySelector('#phone').value,
-                    "agree": document.querySelector('#agree').value
+                    "secondName": document.querySelector('#secondName').checked,
+                    "email": document.querySelector('#email').checked,
+                    "phone": document.querySelector('#phone').checked,
+                    "agree": document.querySelector('#agree').checked
                 }),
             })
             .then((a) => {
